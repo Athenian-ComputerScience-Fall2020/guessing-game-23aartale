@@ -1,10 +1,24 @@
-'''
-Use this file to write an "open" version of the game (no test code or defined format). This will be translated into a testable program later. Use the reponse statements provided to make that transition easier.
+import random
+x=0
+true_num= random.randint(0, 21)
 
-"Your number is too high."
-"Your number is too low."
-"Your number is out of range."
-"I'm sorry you are giving up!"
-"I'm sorry, you are out of guesses."
-
-'''
+try:
+    guess_num = int(input("Thank you for playing. You have 5 tries to guess a random number. Enter a number 0-20: "))
+    if guess_num == str:
+#I want it if it types an integer or a number larger than 20 to rerun the except but it doesnt work
+        while x < 4:
+            if guess_num > true_num:
+                x = x + 1
+                print("Your guess was too high. Try again.")
+                guess_num = int(input("Guess a number 0-20: "))
+            elif guess_num < true_num:
+                x = x + 1
+                print("Your guess was too low. Try again.")
+                guess_num = int(input("Guess a number 0-20: "))
+            elif guess_num == true_num:
+                print("You got it congratulations!")
+                x = x + 5
+            else:
+                print("Too bad you didnt guess it. Better luck next time!")
+except:
+    print("Please put a number 0-20: ")
