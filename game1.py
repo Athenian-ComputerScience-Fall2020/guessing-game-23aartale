@@ -10,15 +10,15 @@ try:
             if guess_num > true_num:
                 x = x + 1
                 print("Your guess was too high. Try again.")
-                guess_num = int(input("Guess a number 0-20: "))
+                guess_num = int(input("Guess a number between " + a + "- " + b ":"))
             elif guess_num < true_num:
                 x = x + 1
                 print("Your guess was too low. Try again.")
-                guess_num = int(input("Guess a number 0-20: "))
+                guess_num = int(input("Guess a number between " + a + "- " + b ":"))
             elif guess_num == true_num:
                 print("You got it congratulations!")
                 x = x + 5
             else:
                 print("Too bad you didnt guess it. Better luck next time!")
 except:
-    print("Please put a number 0-20: ")
+    print("Please put a number between " + a + "- " + b ":")
