@@ -1,15 +1,14 @@
 #Collaborators: Milan Boga, Jack Chen
-
 import random
-
-
 #Function so if user wants to play game again
 def play_game(x,a,b,true_num):
     try:
-        guess_num = int(input("Thank you for playing. You have 5 tries to guess a random number. Enter a number 0-20: "))
+        print("Thank you for playing. You have 5 tries to guess a random number. Enter a number " + str(a) + " -", str(b) + ": ")
+        guess_num = int(input())
     except:
         print("Invalid input")
-        guess_num = int(input("Thank you for playing. You have 5 tries to guess a random number. Enter a number 0-20: "))    
+        print("Thank you for playing. You have 5 tries to guess a random number. Enter a number " + str(a) + " -", str(b) + ": ")
+        guess_num = int(input())
     while x < 4:
         if guess_num > true_num:
             x = x + 1
@@ -23,17 +22,17 @@ def play_game(x,a,b,true_num):
             print("You got it congratulations!")
             x = x + 5
             break
-    
-        print
+
         if x == 5:
             print("Better luck next time")
 
 #x is set to 0 so if it goes over 5 the game realises its done
 x=0
 #number 0-20
-true_num= random.randint(0, 21)
-a = 0
-b = 20
+a = int(input("Put in your lowest number: "))
+b = int(input("Put in your highest number: "))
+
+true_num = random.randint(a, b)
 
 play_game(x,a,b,true_num)
 
@@ -45,4 +44,3 @@ while True:
     elif play_again == 'n':
             print("Goodbye")
             break
-        
